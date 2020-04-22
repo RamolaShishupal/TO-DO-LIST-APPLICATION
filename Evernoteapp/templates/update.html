@@ -1,0 +1,22 @@
+
+{% extends 'base.html' %}
+{% block content %}
+
+
+    {% if all_item %}
+        <div class="aleart aleart-warning aleart-dismissable" role="alert">
+        <table class="table table-bordered">
+        {% for things in all_item %}
+            <tr>
+            <td>{{ things.text}}</td>
+                <td><center>{{ things.complete }}</center></td>
+
+                <td><center><a href="{% url 'update' things.id %}">Delete</a></center></td>
+
+
+            </tr>
+        {% endfor %}
+        </table>
+        </div>
+    {% endif %}
+{% endblock content %}
